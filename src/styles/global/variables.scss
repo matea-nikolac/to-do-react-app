@@ -1,0 +1,10 @@
+$list-background-color: #F5F5DC;
+$text-color: #202124;
+$border-color: gray;
+
+%input-design{
+  background-color: $list-background-color;
+  border: none;
+  width: 100%;
+  padding: 10px;
+}

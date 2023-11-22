@@ -1,1 +1,56 @@
 @import './global/variables.scss';
+
+.title {
+  margin-top: 40px;
+}
+
+.to-do-list {
+  background-color: $list-background-color;
+  margin-top: 20px; 
+  position: relative; 
+  
+  .title-input {
+    @extend %input-design;
+    font-size: x-large;
+  }
+
+  h3 {
+    position: absolute;
+    top: 10px; 
+    left: 10px; 
+    margin: 10px;
+    cursor: pointer;
+    color: $text-color;
+  }
+
+  .tasks-list{
+    margin-top: 30px;
+
+    .task-icon{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: $border-color;
+      padding: 0 10px;
+    }
+
+    }
+    .add-task-row{
+      border-top: 1px solid rgb(179, 177, 177);
+      border-bottom: 1px solid rgb(179, 177, 177);
+      display: flex;
+
+      .add-task-input-div{
+        flex: 1;
+        .add-task-input{
+        @extend %input-design;
+        }
+      }
+    }
+  
+  
+}
+
+
+
+

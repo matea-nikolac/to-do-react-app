@@ -55,7 +55,6 @@ const Home = () => {
               onChange={handleTitleChange}
             />
             <DisplayTasks 
-              task = {task}
               tasks = {tasks}
               checkedItems = {checkedItems}
               handleCheckChange = {handleCheckChange}

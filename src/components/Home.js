@@ -4,6 +4,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import DisplayTasks from './tasks/DisplayTasks';
 import AddTasks from './tasks/AddTasks';
+import HideCheckedTasks from './tasks/HideCheckedTasks';
 
 
 const Home = () => {
@@ -58,13 +59,16 @@ const Home = () => {
               tasks = {tasks}
               checkedItems = {checkedItems}
               handleCheckChange = {handleCheckChange}
-              handleTaskChange = {handleTaskChange}
-              handleEnterKey ={handleEnterKey}
             />
             <AddTasks
               handleTaskChange = {handleTaskChange}
               handleEnterKey = {handleEnterKey}
               task = {task}
+            />
+            <HideCheckedTasks
+            tasks = {tasks}
+            checkedItems = {checkedItems}
+            handleCheckChange = {handleCheckChange}
             />
           </div>
         </Col>

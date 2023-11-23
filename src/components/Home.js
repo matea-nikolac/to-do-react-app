@@ -3,6 +3,7 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import DisplayTasks from './tasks/DisplayTasks';
+import AddTasks from './tasks/AddTasks';
 
 
 const Home = () => {
@@ -53,15 +54,19 @@ const Home = () => {
               placeholder={title}
               onChange={handleTitleChange}
             />
-            <div className="tasks-list">
-              <DisplayTasks 
-                task = {task}
-                tasks = {tasks}
-                checkedItems = {checkedItems}
-                handleCheckChange = {handleCheckChange}
-                handleTaskChange = {handleTaskChange}
-                handleEnterKey ={handleEnterKey}/>
-            </div>
+            <DisplayTasks 
+              task = {task}
+              tasks = {tasks}
+              checkedItems = {checkedItems}
+              handleCheckChange = {handleCheckChange}
+              handleTaskChange = {handleTaskChange}
+              handleEnterKey ={handleEnterKey}
+            />
+            <AddTasks
+              handleTaskChange = {handleTaskChange}
+              handleEnterKey = {handleEnterKey}
+              task = {task}
+            />
           </div>
         </Col>
       </Row>

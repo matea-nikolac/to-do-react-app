@@ -1,7 +1,9 @@
-const HideCheckedTasks = ({ tasks, checkedItems, handleCheckChange }) => {
+const HideCheckedTasks = ({ count, tasks, checkedItems, handleCheckChange }) => {
+
 
   return (
     <div className='display-checked-items'>
+      {count > 0 && <p className="checked-tasks-p">You have completed {count} tasks:</p>}
       {tasks.map((item, index) => (
         checkedItems[index]?(
           <div className="added-task" key={index}>

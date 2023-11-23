@@ -12,6 +12,7 @@ const Home = () => {
   const [task, setTask] = useState('');
   const [tasks, setTasks] = useState([]);
   const [checkedItems, setCheckedItems] = useState([])
+  const [count, setCount] = useState(0)
 
   const handleTitleChange = (e) => {
     setTitle(e.target.value);
@@ -42,6 +43,13 @@ const Home = () => {
     setCheckedItems(checkedItemsArray)
   }
 
+  useEffect(() => {
+    const countCheckedItems = () => {
+      setCount(checkedItems.filter(item => item).length)
+    }
+    countCheckedItems()
+  }, [checkedItems])
+
   return (
     <Container>
       <Row>
@@ -66,6 +74,7 @@ const Home = () => {
               task = {task}
             />
             <HideCheckedTasks
+            count = {count}
             tasks = {tasks}
             checkedItems = {checkedItems}
             handleCheckChange = {handleCheckChange}

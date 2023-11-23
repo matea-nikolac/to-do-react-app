@@ -1,12 +1,12 @@
 @import './global/variables.scss';
 
-.title {
-  margin-top: 40px;
+.title h3 {
+  margin-top: 30px;
 }
 
 .to-do-list {
   background-color: $list-background-color;
-  margin-top: 20px; 
+  margin-top: 100px; 
   position: relative; 
   
   .title-input {
@@ -35,9 +35,9 @@
     }
 
     }
-    .add-task-row{
+    .add-task-row {
       border-top: 1px solid rgb(179, 177, 177);
-      border-bottom: 1px solid rgb(179, 177, 177);
+      // border-bottom: 1px solid rgb(179, 177, 177);
       display: flex;
 
       .add-task-input-div{
@@ -45,6 +45,15 @@
         .add-task-input{
         @extend %input-design;
         }
+      }
+    }
+
+    .added-task{
+      border-top: 1px solid rgb(179, 177, 177);
+      padding: 7px;
+
+      .checkbox{
+        margin: 10px;
       }
     }
   

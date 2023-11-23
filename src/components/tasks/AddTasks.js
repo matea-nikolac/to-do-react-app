@@ -10,7 +10,7 @@ const AddTasks = ({handleTaskChange, handleEnterKey, task}) => {
           onChange={handleTaskChange}
           onKeyPress={handleEnterKey}
           value = {task}
-        />
+          />
     </div>
   </div>)
 

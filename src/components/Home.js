@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import DisplayTasks from './tasks/DisplayTasks';
+
 
 const Home = () => {
   const [title, setTitle] = useState('Title');
@@ -52,31 +54,13 @@ const Home = () => {
               onChange={handleTitleChange}
             />
             <div className="tasks-list">
-              {tasks.map((task, index) => (
-                <div className="added-task" key={index}>
-                  <label className='task-label' style = {{textDecoration: checkedItems[index]? 'line-through':'none'}}>
-                    <input 
-                      type="checkbox" 
-                      className="checkbox"
-                      checked = {checkedItems[index]}
-                      onChange = {() => handleCheckChange(index)}
-                    />
-                    {task}
-                  </label>
-                </div>
-              ))}
-              <div className="add-task-row">
-                <div className="task-icon">+</div>
-                <div className="add-task-input-div">
-                  <input
-                    className="add-task-input"
-                    placeholder="List Item"
-                    onChange={handleTaskChange}
-                    onKeyPress={handleEnterKey}
-                    value = {task}
-                  />
-                </div>
-              </div>
+              <DisplayTasks 
+                task = {task}
+                tasks = {tasks}
+                checkedItems = {checkedItems}
+                handleCheckChange = {handleCheckChange}
+                handleTaskChange = {handleTaskChange}
+                handleEnterKey ={handleEnterKey}/>
             </div>
           </div>
         </Col>

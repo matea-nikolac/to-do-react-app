@@ -1,70 +1,57 @@
-# Getting Started with Create React App
+## Introduction
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is a basic To-Do list application created with React. It allows users to add tasks, mark them as completed, and hide/show completed tasks.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- **Add New Tasks:** Use the "List Item" input to add new tasks to the to-do list.
 
-### `npm start`
+- **Mark Tasks as Completed:** Checkbox next to each task allows marking it as completed. Completed tasks are displayed with a strikethrough.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Planning
+Before commencing the coding process, a wireframe was designed to sketch how the to-do list will look like.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+<img width="738" alt="Screenshot 2023-11-24 at 11 39 29" src="https://github.com/matea-nikolac/to-do-react-app/assets/62067357/a9e30e41-d26b-4590-bd27-45e5c25b9109">
 
-### `npm test`
+## Components
+The application is structured into the following components:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+* Home: The main component rendering the overall structure of the app.
 
-### `npm run build`
+* AddTasks: Component responsible for adding new tasks to the list.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+* DisplayTasks: Component for displaying the list of tasks.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+* HideCheckedTasks: Component allowing users to hide or show completed tasks.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Build Process
 
-### `npm run eject`
+* The `Home.js` component includes all the other components, which are responsible for adding tasks, displaying tasks, and creating a dropdown for checked tasks.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Adding Tasks
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+The `AddTasks` component facilitates the addition of new tasks to the to-do list. It includes an input field with a placeholder ("List Item") and supports the 'Enter' key for quick task entry.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Displaying Tasks
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+The `DisplayTasks` component is responsible for rendering the to-do list. It dynamically displays tasks and checkboxes, allowing users to mark tasks as completed. The component receives the current list of tasks (`tasks`), an array of checked items (`checkedItems`), and a function (`handleCheckChange`) to handle the change of checked status for each task.
 
-## Learn More
+<img width="823" alt="Screenshot 2023-11-24 at 11 50 44" src="https://github.com/matea-nikolac/to-do-react-app/assets/62067357/aa5c5d7d-e497-4e41-a40c-c5e310e0fe01">
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Hiding Checked Tasks
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+The `HideCheckedTasks` component enables users to hide or reveal completed tasks in the to-do list. It features a collapsible dropdown that shows the count of completed tasks. Users can toggle the visibility of completed tasks by clicking on the dropdown icon. The component utilizes Font Awesome icons for a sleek user interface. 
 
-### Code Splitting
+<img width="1087" alt="Screenshot 2023-11-24 at 11 54 57" src="https://github.com/matea-nikolac/to-do-react-app/assets/62067357/3f00768b-c4be-4b87-aab2-2f46cf0f06d6">
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Challenges
 
-### Analyzing the Bundle Size
+#### Managing Task Display
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+The primary challenge was creating separate divs for displaying unchecked and checked tasks. The solution involved passing the tasks state to both the `DisplayTasks` and `HideCheckedTasks` components. By filtering tasks based on the boolean value of `checkedItems[index]`, the desired separation was achieved.
 
-### Making a Progressive Web App
+#### Task Completion Logic
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Implementing the logic for defining whether a task is checked or unchecked posed a challenge. The solution involved creating a function called `handleCheckChange`. This function toggles the boolean value of the corresponding task in the `checkedItems` array when a checkbox is clicked.
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<img width="707" alt="Screenshot 2023-11-24 at 11 59 16" src="https://github.com/matea-nikolac/to-do-react-app/assets/62067357/db1d6e8f-99c6-4572-a55f-369be3f779a4">

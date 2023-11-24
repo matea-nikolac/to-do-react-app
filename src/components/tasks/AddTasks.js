@@ -1,3 +1,5 @@
+
+
 const AddTasks = ({handleTaskChange, handleEnterKey, task}) => {
 
   return (            
@@ -11,8 +13,9 @@ const AddTasks = ({handleTaskChange, handleEnterKey, task}) => {
           onKeyPress={handleEnterKey}
           value = {task}
           />
+      </div>
     </div>
-  </div>)
+  )
 
 }
 

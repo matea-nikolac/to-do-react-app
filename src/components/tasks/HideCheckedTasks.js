@@ -1,8 +1,9 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons';
+import { faChevronDown, faChevronUp, faTrash } from '@fortawesome/free-solid-svg-icons';
 import { useState } from 'react';
 
-const HideCheckedTasks = ({ count, tasks, checkedItems, handleCheckChange }) => {
+
+const HideCheckedTasks = ({ count, tasks, checkedItems, handleCheckChange, handleDelete }) => {
 
   const [showDropdown, setShowDropdown] = useState(false)
 
@@ -34,6 +35,9 @@ const HideCheckedTasks = ({ count, tasks, checkedItems, handleCheckChange }) => 
               />
               {item}
             </label>
+            <div className="task-icon" onClick={() => handleDelete(item)}>
+                <FontAwesomeIcon className="delete-icon"icon={faTrash} />
+            </div>
           </div>
         )
         :

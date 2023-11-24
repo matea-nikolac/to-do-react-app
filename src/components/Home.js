@@ -6,7 +6,6 @@ import DisplayTasks from './tasks/DisplayTasks';
 import AddTasks from './tasks/AddTasks';
 import HideCheckedTasks from './tasks/HideCheckedTasks';
 
-
 const Home = () => {
   const [title, setTitle] = useState('Title');
   const [task, setTask] = useState('');
@@ -43,12 +42,17 @@ const Home = () => {
     setCheckedItems(checkedItemsArray)
   }
 
+  const handleDelete = (item) => {
+    const newTaskArray = tasks.filter(task => !task.includes(item))
+    setTasks(newTaskArray)
+  }
+
   useEffect(() => {
     const countCheckedItems = () => {
       setCount(checkedItems.filter(item => item).length)
     }
     countCheckedItems()
-  }, [checkedItems])
+  }, [checkedItems, tasks])
 
   return (
     <Container>
@@ -67,6 +71,7 @@ const Home = () => {
               tasks = {tasks}
               checkedItems = {checkedItems}
               handleCheckChange = {handleCheckChange}
+              handleDelete = {handleDelete}
             />
             <AddTasks
               handleTaskChange = {handleTaskChange}
@@ -78,6 +83,7 @@ const Home = () => {
             tasks = {tasks}
             checkedItems = {checkedItems}
             handleCheckChange = {handleCheckChange}
+            handleDelete = {handleDelete}
             />
           </div>
         </Col>

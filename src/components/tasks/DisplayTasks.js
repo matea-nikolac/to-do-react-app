@@ -21,7 +21,6 @@ const DisplayTasks = ({tasks, checkedItems, handleCheckChange}) => {
           )}
     </div>
   )
-
 }
 
 export default DisplayTasks

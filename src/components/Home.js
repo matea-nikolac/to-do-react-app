@@ -56,7 +56,7 @@ const Home = () => {
         <Col className="title" xs="12">
           <h3 className="display-4 mb-8 text-center">TO DO LIST</h3>
         </Col>
-        <Col xs="12" lg="5" className="to-do-list-column mx-auto">
+        <Col xs="12" lg="5" md="6" className="to-do-list-column mx-auto">
           <div className="to-do-list">
             <input
               className="title-input"

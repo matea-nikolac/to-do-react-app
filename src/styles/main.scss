@@ -6,7 +6,7 @@
 
 .to-do-list {
   background-color: $list-background-color;
-  margin-top: 100px; 
+  margin-top: 60px; 
   position: relative; 
   
   .title-input {
@@ -28,6 +28,7 @@
       // border-bottom: 1px solid rgb(179, 177, 177);
       display: flex;
 
+
       .task-icon{
         display: flex;
         align-items: center;
@@ -44,6 +45,14 @@
       }
     }
 
+    .display-checked-items{
+      .checked-tasks-p{
+        .dropdown-toggle::after {
+          content: none;
+        }
+      }
+    }
+
     .added-task{
       border-top: 1px solid rgb(179, 177, 177);
       padding: 7px;
@@ -52,11 +61,15 @@
         margin: 10px;
       }
     }
-  
-  
 }
-
 
 .checked-tasks-p{
   margin: 7px;
+}
+
+@media (min-width: 660px){
+  .to-do-list {
+    background-color: $list-background-color;
+    margin-top: 100px; 
+  }
 }

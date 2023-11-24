@@ -2,6 +2,10 @@
 
 This project is a basic To-Do list application created with React. It allows users to add tasks, mark them as completed, and hide/show completed tasks.
 
+<img width="774" alt="Screenshot 2023-11-24 at 15 53 48" src="https://github.com/matea-nikolac/to-do-react-app/assets/62067357/5fe37c51-cc62-4ae0-b8e6-b9cbaf33f69c">
+
+<img width="798" alt="Screenshot 2023-11-24 at 15 54 13" src="https://github.com/matea-nikolac/to-do-react-app/assets/62067357/302039ef-9f2f-4ec8-9120-88f05d7c0482">
+
 ## Features
 
 - **Add New Tasks:** Use the "List Item" input to add new tasks to the to-do list.

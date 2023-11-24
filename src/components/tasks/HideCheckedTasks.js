@@ -28,7 +28,7 @@ const HideCheckedTasks = ({ count, tasks, checkedItems, handleCheckChange }) => 
             <label className='task-label' style={{color:"grey", textDecoration: checkedItems[index] ? 'line-through' : 'none' }}>
               <input
                 type="checkbox"
-                className="checkbox"
+                className="checkbox" 
                 checked={checkedItems[index]}
                 onChange={() => handleCheckChange(index)}
               />

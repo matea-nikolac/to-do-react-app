@@ -35,7 +35,7 @@ const HideCheckedTasks = ({ count, tasks, checkedItems, handleCheckChange, handl
               />
               {item}
             </label>
-            <div className="task-icon" onClick={() => handleDelete(item)}>
+            <div className="task-icon" onClick={() => handleDelete(index)}>
                 <FontAwesomeIcon className="delete-icon"icon={faTrash} />
             </div>
           </div>

@@ -42,9 +42,15 @@ const Home = () => {
     setCheckedItems(checkedItemsArray)
   }
 
-  const handleDelete = (item) => {
-    const newTaskArray = tasks.filter(task => !task.includes(item))
-    setTasks(newTaskArray)
+  const handleDelete = (index) => {
+    const newTasksArray = [...tasks];
+    newTasksArray.splice(index, 1);
+    setTasks(newTasksArray);
+  
+    const newCheckedItemsArray = [...checkedItems];
+    newCheckedItemsArray.splice(index, 1);
+    setCheckedItems(newCheckedItemsArray);
+
   }
 
   useEffect(() => {
